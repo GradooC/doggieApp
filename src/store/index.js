@@ -1,14 +1,19 @@
 import { createStore, applyMiddleware, compose } from "redux";
-import reducers from '../reducers/index';
 import thunk from 'redux-thunk';
+import history from "../history";
+import { routerMiddleware } from 'connected-react-router';
+import createRootReducer from '../reducers';
 
 const ext = window.__REDUX_DEVTOOLS_EXTENSION__;
 const devtoolMiddleware = ext && ext();
 
 const store = createStore(
-  reducers,
+  createRootReducer(history),
   compose(
-    applyMiddleware(thunk),
+    applyMiddleware(
+      routerMiddleware(history),
+      thunk
+    ),
     devtoolMiddleware
   ),
 );

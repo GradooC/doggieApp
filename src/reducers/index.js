@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { handleActions } from 'redux-actions';
 import * as actions from '../actions';
+import { connectRouter } from 'connected-react-router'
 
 
 const fetchingImgState = handleActions({
@@ -48,7 +49,8 @@ const serchValue = handleActions({
   }
 }, '');
 
-export default combineReducers({
+export default (history) => combineReducers({
+  router: connectRouter(history),
   fetchingBreedState,
   fetchingImgState,
   breeds,

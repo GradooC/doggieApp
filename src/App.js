@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import BreedsListContainer from './containers/BreedsListContainer';
 import BreedContainer from './containers/BreedContainer';
 import NavBarContainer from './containers/NavBarContainer';
-import  NotFound  from "./components/NotFound";
+import NotFound  from "./components/NotFound";
+import history from "./history";
+import { ConnectedRouter } from 'connected-react-router'
 
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <ConnectedRouter history={history}>
         <div>
           <NavBarContainer />
           <Switch>
@@ -18,7 +20,7 @@ class App extends Component {
             <Route component={NotFound} />
           </Switch>
         </div>
-      </BrowserRouter>
+      </ConnectedRouter>
     );
   }
 }

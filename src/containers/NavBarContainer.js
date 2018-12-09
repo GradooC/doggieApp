@@ -3,8 +3,10 @@ import NavBar from '../components/NavBar';
 import { serchChange } from '../actions/index';
 
 const mapStateToProps = (state) => {
+  const { serchValue, router } = state;
   const props = {
-    state
+    serchValue,
+    router
   };
   return props;
 };
