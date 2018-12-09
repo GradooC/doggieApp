@@ -2,15 +2,15 @@ import axios from 'axios';
 import routes from '../routes';
 import { createAction } from 'redux-actions';
 
-export const fetchBreedsRequest =   createAction('FETCH_BREEDS_REQUEST');
-export const fetchBreedsSuccess =   createAction('FETCH_BREEDS_SUCCESS');
-export const fetchBreedsFailyre =   createAction('FETCH_BREEDS_FAILURE');
+export const fetchBreedsRequest = createAction('FETCH_BREEDS_REQUEST');
+export const fetchBreedsSuccess = createAction('FETCH_BREEDS_SUCCESS');
+export const fetchBreedsFailyre = createAction('FETCH_BREEDS_FAILURE');
 
 export const fetchBreedImgRequest = createAction('FETCH_BREED_IMG_REQUEST');
 export const fetchBreedImgSuccess = createAction('FETCH_BREED_IMG_SUCCESS');
 export const fetchBreedImgFailyre = createAction('FETCH_BREED_IMG_FAILURE');
 
-export const serchChange =           createAction('SERCH_CHANGE');
+export const serchChange = createAction('SERCH_CHANGE');
 
 export const fetchBreeds = () => async (dispatch) => {
   dispatch(fetchBreedsRequest());

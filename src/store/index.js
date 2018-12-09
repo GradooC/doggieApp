@@ -13,7 +13,4 @@ const store = createStore(
   ),
 );
 
-//dev only
-window.store = store;
-
 export default store;

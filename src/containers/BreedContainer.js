@@ -3,7 +3,6 @@ import Breed from '../components/Breed';
 import { fetchBreedImg } from '../actions/index';
 
 const mapStateToProps = (state) => {
-  // console.log(state);
   const { breedImg, fetchingImgState } = state;
   const props = {
     breedImg,

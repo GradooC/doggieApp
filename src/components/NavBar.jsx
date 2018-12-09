@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { serchChange } from '../actions';
 
 export default class NavBar extends React.Component {
 
