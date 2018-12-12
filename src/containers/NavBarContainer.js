@@ -1,14 +1,10 @@
 import { connect } from 'react-redux';
 import NavBar from '../components/NavBar';
 import { serchChange } from '../actions/index';
+import { navBarSelector } from "../selectors";
 
 const mapStateToProps = (state) => {
-  const { serchValue, router: { location: { pathname } } } = state;
-  const props = {
-    serchValue,
-    pathname
-  };
-  return props;
+  return { navProps: navBarSelector(state) };
 };
 
 export default connect(
